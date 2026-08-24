@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/support">
+
+    <EditText
+        android:id="@+id/faqsearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@drawable/search_bkg"
+        android:drawableStart="@drawable/search_24px"
+        android:hint="@string/search"
+        android:inputType="text"
+        android:padding="@dimen/_10sdp"
+        android:singleLine="true"
+        android:textColor="#c7c7c7"
+        android:textColorHint="#c7c7c7"
+        tools:ignore="Autofill" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/faqView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@+id/discordText"
+        android:layout_below="@id/faqsearch"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:scrollbars="vertical" />
+
+    <TextView
+        android:id="@+id/discordText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/_13sdp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:text="@string/more_details"
+        android:textColor="@color/faq"
+        android:textSize="@dimen/_10ssp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

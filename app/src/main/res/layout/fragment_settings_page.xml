@@ -1,0 +1,989 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/settings">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:background="@color/settings"
+        android:elevation="@dimen/_4sdp"
+        android:padding="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/Settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/settings"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_below="@id/Settings"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/white" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_60sdp"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_50sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/round_back_whiite10_20"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp">
+
+                <!-- SA-MP Version Settings -->
+                <RelativeLayout
+                    android:id="@+id/samp_version_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/sampIcon"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/round_back_security"
+                        android:contentDescription="@string/todo"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/security_icon" />
+
+                    <TextView
+                        android:id="@+id/samp_version_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@id/sampIcon"
+                        android:text="@string/sa_mp_version"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/samp_version_selector"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:hint="Select"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="@dimen/_5sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_5sdp"
+                        app:boxStrokeColor="@color/white">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/samp_version"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:inputType="none"
+                            android:padding="@dimen/_7sdp"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_11ssp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+                <!-- Game Version Settings -->
+                <RelativeLayout
+                    android:id="@+id/game_version_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/gameIcon"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/round_back_security"
+                        android:contentDescription="@string/todo"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/security_icon" />
+
+                    <TextView
+                        android:id="@+id/game_version_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@+id/gameIcon"
+                        android:text="@string/game_version"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/game_version_selector"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:hint="Select"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="@dimen/_5sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_5sdp"
+                        app:boxStrokeColor="@color/white">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/game_version"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:inputType="none"
+                            android:padding="@dimen/_7sdp"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_11ssp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+                <!-- System Keyboard -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/systemkeyboardIcon"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@drawable/round_back_security"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/security_icon"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@+id/systemkeyboardIcon"
+                        android:text="@string/system_keyboard"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        tools:ignore="RelativeOverlap" />
+
+                    <Switch
+                        android:id="@+id/systemkeyboard_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:scaleX="1"
+                        android:scaleY="1.2"
+                        android:textSize="@dimen/_11sdp"
+                        android:thumb="@drawable/ic_thumb"
+                        android:track="@drawable/bg_track"
+                        tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+                </RelativeLayout>
+
+                <!-- Display FPS -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/displayfpsIcon"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@drawable/round_back_security"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/security_icon"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@+id/displayfpsIcon"
+                        android:text="@string/display_fps"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        tools:ignore="RelativeOverlap" />
+
+                    <Switch
+                        android:id="@+id/displayfps_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:checked="false"
+                        android:scaleX="1"
+                        android:scaleY="1.2"
+                        android:textSize="@dimen/_11sdp"
+                        android:thumb="@drawable/ic_thumb"
+                        android:track="@drawable/bg_track"
+                        tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+                </RelativeLayout>
+
+                <!-- Full Screen Mode -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/fullscreenmodeIcon"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@drawable/round_back_security"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/security_icon"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@+id/fullscreenmodeIcon"
+                        android:text="@string/full_screen_mode"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        tools:ignore="RelativeOverlap" />
+
+                    <Switch
+                        android:id="@+id/fullscreen_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:checked="false"
+                        android:scaleX="1"
+                        android:scaleY="1.2"
+                        android:textSize="@dimen/_11sdp"
+                        android:thumb="@drawable/ic_thumb"
+                        android:track="@drawable/bg_track"
+                        tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/round_back_whiite10_20"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp">
+
+                <!-- Voice Chat -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/voicechatIcon"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@drawable/round_back_security"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/security_icon"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@+id/voicechatIcon"
+                        android:text="@string/voice_chat"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        tools:ignore="RelativeOverlap" />
+
+                    <Switch
+                        android:id="@+id/voice_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:checked="false"
+                        android:scaleX="1"
+                        android:scaleY="1.2"
+                        android:textSize="@dimen/_11sdp"
+                        android:thumb="@drawable/ic_thumb"
+                        android:track="@drawable/bg_track"
+                        tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+                </RelativeLayout>
+
+                <!-- Chat Timestamp -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/chattimestampIcon"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@drawable/round_back_security"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/security_icon"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@+id/chattimestampIcon"
+                        android:text="@string/chat_timestamp"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        tools:ignore="RelativeOverlap" />
+
+                    <Switch
+                        android:id="@+id/timestamp_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:checked="false"
+                        android:scaleX="1"
+                        android:scaleY="1.2"
+                        android:textSize="@dimen/_11sdp"
+                        android:thumb="@drawable/ic_thumb"
+                        android:track="@drawable/bg_track"
+                        tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+                </RelativeLayout>
+
+                <!-- Modify Game Files -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/modifygamefilesIcon"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@drawable/round_back_security"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/security_icon"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@+id/modifygamefilesIcon"
+                        android:text="@string/modify_game_files"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        tools:ignore="RelativeOverlap" />
+
+                    <Switch
+                        android:id="@+id/modify_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:checked="false"
+                        android:scaleX="1"
+                        android:scaleY="1.2"
+                        android:textSize="@dimen/_11sdp"
+                        android:thumb="@drawable/ic_thumb"
+                        android:track="@drawable/bg_track"
+                        tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mods_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/round_back_whiite10_20"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp">
+
+                <!-- CLEO Scripts -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/cleoIcon"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@drawable/round_back_security"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/security_icon"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@+id/cleoIcon"
+                        android:text="@string/cleo_scripts"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        tools:ignore="RelativeOverlap" />
+
+                    <Switch
+                        android:id="@+id/cleo_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:checked="false"
+                        android:contentDescription="@string/todo"
+                        android:scaleX="1"
+                        android:scaleY="1.2"
+                        android:textSize="@dimen/_11sdp"
+                        android:thumb="@drawable/ic_thumb"
+                        android:track="@drawable/bg_track"
+                        tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+                </RelativeLayout>
+
+                <!-- AML Scripts -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/amlIcon"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@drawable/round_back_security"
+                        android:contentDescription="@string/todo"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/security_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@+id/amlIcon"
+                        android:text="@string/aml_scripts"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        tools:ignore="RelativeOverlap" />
+
+                    <Switch
+                        android:id="@+id/aml_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:checked="false"
+                        android:scaleX="1"
+                        android:scaleY="1.2"
+                        android:textSize="@dimen/_11sdp"
+                        android:thumb="@drawable/ic_thumb"
+                        android:track="@drawable/bg_track"
+                        tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+                </RelativeLayout>
+
+                <!-- Monetloader Scripts -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/monetloaderIcon"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@drawable/round_back_security"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/security_icon"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@+id/monetloaderIcon"
+                        android:text="@string/monetloader_scripts"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        tools:ignore="RelativeOverlap" />
+
+                    <Switch
+                        android:id="@+id/monet_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:checked="false"
+                        android:scaleX="1"
+                        android:scaleY="1.2"
+                        android:textSize="@dimen/_11sdp"
+                        android:thumb="@drawable/ic_thumb"
+                        android:track="@drawable/bg_track"
+                        tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+                </RelativeLayout>
+
+                <!-- Modloader Scripts -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/modloaderIcon"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@drawable/round_back_security"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/security_icon"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@+id/modloaderIcon"
+                        android:text="@string/mod_loader"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        tools:ignore="RelativeOverlap" />
+
+                    <Switch
+                        android:id="@+id/modloader_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:checked="false"
+                        android:scaleX="1"
+                        android:scaleY="1.2"
+                        android:textSize="@dimen/_11sdp"
+                        android:thumb="@drawable/ic_thumb"
+                        android:track="@drawable/bg_track"
+                        tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:background="@drawable/round_back_whiite10_20"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp">
+
+                <!-- Game Files Type -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/gamefilestypeIcon"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/round_back_security"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/security_icon"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/game_files_type_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@id/gamefilestypeIcon"
+                        android:text="@string/game_files_type"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        tools:ignore="RelativeOverlap" />
+
+                    <com.google.android.material.button.MaterialButtonToggleGroup
+                        android:id="@+id/datatype_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/data_full"
+                            style="?attr/materialButtonOutlinedStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:minWidth="@dimen/_50sdp"
+                            android:minHeight="@dimen/_20sdp"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:text="FULL"
+                            android:textAllCaps="false"
+                            android:textSize="@dimen/_11ssp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/data_lite"
+                            style="?attr/materialButtonOutlinedStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:minWidth="@dimen/_50sdp"
+                            android:minHeight="@dimen/_20sdp"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:text="LITE"
+                            android:textAllCaps="false"
+                            android:textSize="@dimen/_11ssp" />
+
+                    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                </RelativeLayout>
+
+                <!-- Font Size -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/fontsizeIcon"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@drawable/round_back_security"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/security_icon"
+                        tools:ignore="ContentDescription,ImageContrastCheck" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@+id/fontsizeIcon"
+                        android:text="Font Size"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        tools:ignore="RelativeOverlap" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/fontsize_layout"
+                        style="?attr/textInputStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="@dimen/_5sdp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/fontsize"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="1234567890"
+                            android:hint="Size"
+                            android:maxLength="4"
+                            android:padding="@dimen/_7sdp"
+                            android:singleLine="true"
+                            android:text="26.0"
+                            android:textSize="@dimen/_11ssp"
+                            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </RelativeLayout>
+
+                <!-- Chat Strings -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/chatstringsIcon"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/round_back_security"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/security_icon"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/chat_strings_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@id/chatstringsIcon"
+                        android:text="@string/chat_strings"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        tools:ignore="RelativeOverlap" />
+
+                    <com.google.android.material.button.MaterialButtonToggleGroup
+                        android:id="@+id/chatstrings_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/chat_minus"
+                            style="?attr/materialButtonOutlinedStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="@dimen/_40sdp"
+                            android:minHeight="@dimen/_20sdp"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:text="-"
+                            android:textSize="@dimen/_11ssp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/chat_strings"
+                            style="?attr/materialButtonOutlinedStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="false"
+                            android:minWidth="@dimen/_40sdp"
+                            android:minHeight="@dimen/_20sdp"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:text="5"
+                            android:textSize="@dimen/_11ssp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/chat_plus"
+                            style="?attr/materialButtonOutlinedStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="@dimen/_40sdp"
+                            android:minHeight="@dimen/_20sdp"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:text="+"
+                            android:textSize="@dimen/_11ssp" />
+
+                    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                </RelativeLayout>
+
+                <!-- Chat Position -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/chatposIcon"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@drawable/round_back_security"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/security_icon"
+                        tools:ignore="ContentDescription,ImageContrastCheck" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@+id/chatposIcon"
+                        android:text="@string/chat_position"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        tools:ignore="RelativeOverlap" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/chatposx_layout"
+                        style="?attr/textInputStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_toStartOf="@+id/chatposy_layout">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/chatposx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="1234567890"
+                            android:hint="X"
+                            android:maxLength="4"
+                            android:padding="@dimen/_7sdp"
+                            android:singleLine="true"
+                            android:text="100"
+                            android:textSize="@dimen/_11ssp"
+                            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/chatposy_layout"
+                        style="?attr/textInputStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/chatposy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="1234567890"
+                            android:hint="Y"
+                            android:maxLength="4"
+                            android:padding="@dimen/_7sdp"
+                            android:singleLine="true"
+                            android:text="10"
+                            android:textSize="@dimen/_11ssp"
+                            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+                <!-- Chat Size -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/chatsizeIcon"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@drawable/round_back_security"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/security_icon"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@+id/chatsizeIcon"
+                        android:text="@string/chat_size"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        tools:ignore="RelativeOverlap" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/chatsizex_layout"
+                        style="?attr/textInputStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_toStartOf="@+id/chatsizey_layout">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/chatsizex"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="1234567890"
+                            android:hint="X"
+                            android:maxLength="4"
+                            android:padding="@dimen/_7sdp"
+                            android:singleLine="true"
+                            android:text="400"
+                            android:textSize="@dimen/_11ssp"
+                            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/chatsizey_layout"
+                        style="?attr/textInputStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/chatsizey"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="1234567890"
+                            android:hint="Y"
+                            android:maxLength="4"
+                            android:padding="@dimen/_7sdp"
+                            android:singleLine="true"
+                            android:text="150"
+                            android:textSize="@dimen/_11ssp"
+                            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+                <!-- Reset Settings -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/resetIcon"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@drawable/round_back_security"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/security_icon"
+                        tools:ignore="ContentDescription,TooManyViews" />
+
+                    <TextView
+                        android:id="@+id/resetText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@+id/resetIcon"
+                        android:text="@string/reset_settings"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/restore_button"
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="@string/reset"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        tools:ignore="RelativeOverlap,TouchTargetSizeCheck" />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

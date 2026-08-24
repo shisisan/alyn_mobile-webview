@@ -1,0 +1,130 @@
+#include "GxtChar.h"
+
+#define ARRAY_SIZE(array) (sizeof(array) / sizeof(array[0]))
+
+namespace sa {
+void AsciiToGxtChar(const char* src, GxtChar* dst)
+{
+	// assert(src && dst);
+	for (int32 i = 0; src[i]; ++i) {
+		dst[i] = src[i];
+		dst[i + 1] = 0;
+	}
+}
+
+const char* GxtCharToAscii(const GxtChar* src, uint8 start)
+{
+	static char buf[256] = {0};
+
+	const GxtChar* str = [&] {
+		if (start) {
+			return &src[start];
+		}
+		else {
+			return src;
+		}
+	}();
+
+	int32 i = 0;
+	while (i < (ARRAY_SIZE(buf) - 1) && (str && str[i])) {
+		GxtChar symbol = str[i];
+
+		if (symbol >= 0x80 && symbol <= 0x83) {
+			symbol += 0x40;
+		}
+		else if (symbol >= 0x84 && symbol <= 0x8D) {
+			symbol += 0x42;
+		}
+		else if (symbol >= 0x8E && symbol <= 0x91) {
+			symbol += 0x44;
+		}
+		else if (symbol >= 0x92 && symbol <= 0x95) {
+			symbol += 0x47;
+		}
+		else if (symbol >= 0x96 && symbol <= 0x9A) {
+			symbol += 0x49;
+		}
+		else if (symbol >= 0x9B && symbol <= 0xA4) {
+			symbol += 0x4B;
+		}
+		else if (symbol >= 0xA5 && symbol <= 0xA8) {
+			symbol += 0x4D;
+		}
+		else if (symbol >= 0xA9 && symbol <= 0xCC) {
+			symbol += 0x50;
+		}
+		else if (symbol == 0xCD) {
+			symbol = static_cast<GxtChar>(0xD1);
+		}
+		else if (symbol == 0xCE) {
+			symbol = static_cast<GxtChar>(0xF1);
+		}
+		else if (symbol == 0xCF) {
+			symbol = static_cast<GxtChar>(0xBF);
+		}
+		else if (symbol >= 0xD0) {
+			symbol = static_cast<GxtChar>(0x23);
+		} // '#'
+
+		buf[i] = symbol;
+
+		++i;
+	}
+	buf[i] = '\0';
+
+	return buf;
+}
+
+GxtChar* GxtCharStrcat(GxtChar* dst, const GxtChar* src)
+{
+	GxtChar* target = dst;
+	if (*dst) {
+		while (target[0])
+			++target;
+	}
+	if (*src) {
+		while (*src)
+			*target++ = *src++;
+	}
+	*target = '\0';
+	return dst;
+}
+
+uint32 GxtCharStrlen(const GxtChar* str)
+{
+	uint32 len = 0;
+	while (str[len]) {
+		++len;
+	}
+	return len;
+}
+
+void MakeLowerCase(char* str)
+{
+	char* start = str;
+	while (*start) {
+		if (*start >= 'A' && *start <= 'Z') {
+			*start += 'a' - 'A';
+		}
+		++start;
+	}
+}
+
+void TextCopy(GxtChar* dst, const GxtChar* src)
+{
+	while (*src) {
+		*dst = *src;
+		++src;
+		++dst;
+	}
+	*dst = '\0';
+}
+
+GxtChar* GxtCharStrcpy(GxtChar* dst, const GxtChar* src)
+{
+	TextCopy(dst, src);
+	return dst;
+}
+}
+
+#undef ARRAY_SIZE

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_scoreboard_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingRight="@dimen/_8sdp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/row_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_17sdp"
+        android:background="#503030"
+        android:scaleType="fitXY"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_17sdp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/player_id"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="id"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_8sdp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/player_name"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center_vertical"
+            android:text="name"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_8sdp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/player_score"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_10sdp"
+            android:text="score"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_8sdp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/player_ping"
+            android:layout_width="@dimen/_5sdp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_10sdp"
+            android:text="ping"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_8sdp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

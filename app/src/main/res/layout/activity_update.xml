@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/ahahaha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_7sdp"
+        android:fontFamily="@font/gotham"
+        android:gravity="end"
+        android:text="@string/ahahaha"
+        android:textColor="#757575"
+        android:textSize="@dimen/_8ssp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/icon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/title_text"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/end_line"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@+id/start_line"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.77"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/samp_logo" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/gotham"
+        android:text="@string/alyn_sa_mp"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintBottom_toTopOf="@+id/second_title_text"
+        app:layout_constraintEnd_toStartOf="@+id/end_line"
+        app:layout_constraintStart_toStartOf="@+id/start_line"
+        app:layout_constraintTop_toBottomOf="@+id/icon" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/second_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gotham"
+        android:text="@string/mobile"
+        android:textColor="#AFAFAF"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toTopOf="@+id/info_text"
+        app:layout_constraintEnd_toEndOf="@+id/title_text"
+        app:layout_constraintStart_toStartOf="@+id/title_text"
+        app:layout_constraintTop_toBottomOf="@+id/title_text" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/info_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:gravity="center"
+        android:text="@string/please_do_not_minimize_or_close_app_while_downloading"
+        android:textStyle="bold"
+        app:fontFamily="@font/gotham"
+        app:layout_constraintBottom_toTopOf="@+id/update_state"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/second_title_text" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/update_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/updating_game"
+        android:textColor="#AFAFAF"
+        android:textSize="@dimen/_10ssp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/progress"
+        app:layout_constraintEnd_toStartOf="@+id/end_line"
+        app:layout_constraintStart_toStartOf="@+id/start_line" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/_0"
+        android:textColor="@color/design_default_color_on_primary"
+        android:textSize="@dimen/_9ssp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="@+id/update_state"
+        app:layout_constraintStart_toStartOf="@+id/update_state" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/filename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_9sdp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/none"
+        android:textColor="#AFAFAF"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintEnd_toStartOf="@+id/start_line"
+        app:layout_constraintStart_toStartOf="@+id/start_line"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="@string/_0_mb_0_mb"
+        android:textColor="#AFAFAF"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintEnd_toStartOf="@+id/end_line"
+        app:layout_constraintStart_toStartOf="@+id/end_line"
+        app:layout_constraintTop_toTopOf="@+id/filename" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_minus30sdp"
+        android:layout_marginEnd="@dimen/_minus30sdp"
+        android:layout_marginBottom="@dimen/_55sdp"
+        android:indeterminate="true"
+        android:progress="30"
+        android:scaleY="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/end_line"
+        app:layout_constraintStart_toStartOf="@+id/start_line" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

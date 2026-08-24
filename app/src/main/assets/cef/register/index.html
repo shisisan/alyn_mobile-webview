@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Santos Roleplay - Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Slab:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div id="cef-overlay" class="cef-container">
+
+    <div id="login-card" class="login-panel">
+
+        <div class="panel-top-line"></div>
+
+        <div class="panel-header">
+            <div class="server-name">LOS SANTOS ROLEPLAY</div>
+            <h1>PLAYER LOGIN</h1>
+            <p>Enter your account credentials to continue.</p>
+        </div>
+
+        <div id="error-banner" class="error-banner hidden">
+            <span class="error-mark">!</span>
+            <span id="error-message">Invalid username or password.</span>
+        </div>
+
+        <form id="login-form" onsubmit="handleLogin(event)">
+
+            <div class="form-group">
+                <label for="username">USERNAME</label>
+
+                <div class="input-container">
+                    <span class="input-prefix">@</span>
+
+                    <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Enter username"
+                            autocomplete="off"
+                            spellcheck="false"
+                            maxlength="24"
+                            required
+                    >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">PASSWORD</label>
+
+                <div class="input-container">
+                    <span class="input-prefix password-icon">●</span>
+
+                    <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter password"
+                            autocomplete="off"
+                            maxlength="64"
+                            required
+                    >
+
+                    <button
+                            type="button"
+                            id="password-toggle"
+                            class="password-toggle"
+                            onclick="togglePassword()"
+                    >
+                        SHOW
+                    </button>
+                </div>
+            </div>
+
+            <div class="login-options">
+                <label class="remember-container">
+                    <input type="checkbox" id="remember">
+                    <span class="custom-checkbox"></span>
+                    <span>Remember me</span>
+                </label>
+            </div>
+
+            <div class="panel-divider"></div>
+
+            <div class="form-actions">
+
+                <button
+                        type="button"
+                        class="action-button cancel-button"
+                        onclick="handleCancel()"
+                >
+                    CANCEL
+                </button>
+
+                <button
+                        type="submit"
+                        id="login-button"
+                        class="action-button login-button"
+                >
+                    <span id="login-button-text">LOGIN</span>
+                    <span id="login-spinner" class="spinner hidden"></span>
+                </button>
+
+            </div>
+
+        </form>
+
+        <div class="panel-footer">
+            <span>LOS SANTOS</span>
+            <span class="footer-separator">•</span>
+            <span>ROLEPLAY</span>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

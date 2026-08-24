@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/buttonpanel_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <LinearLayout
+        android:id="@+id/buttons_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_1sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_extend"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_1sdp"
+            android:maxLines="1"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="EXT"
+            android:textSize="@dimen/_6ssp"
+            app:autoSizeMaxTextSize="@dimen/_6ssp"
+            app:autoSizeMinTextSize="@dimen/_4ssp"
+            app:autoSizeStepGranularity="@dimen/_1ssp"
+            app:autoSizeTextType="uniform" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_esc"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_1sdp"
+            android:maxLines="1"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="ESC"
+            android:textSize="@dimen/_6ssp"
+            app:autoSizeMaxTextSize="@dimen/_6ssp"
+            app:autoSizeMinTextSize="@dimen/_4ssp"
+            app:autoSizeStepGranularity="@dimen/_1ssp"
+            app:autoSizeTextType="uniform" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_tab"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_1sdp"
+            android:maxLines="1"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="TAB"
+            android:textSize="@dimen/_6ssp"
+            app:autoSizeMaxTextSize="@dimen/_6ssp"
+            app:autoSizeMinTextSize="@dimen/_4ssp"
+            app:autoSizeStepGranularity="@dimen/_1ssp"
+            app:autoSizeTextType="uniform" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_alt"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_1sdp"
+            android:maxLines="1"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="ALT"
+            android:textSize="@dimen/_6ssp"
+            app:autoSizeMaxTextSize="@dimen/_6ssp"
+            app:autoSizeMinTextSize="@dimen/_4ssp"
+            app:autoSizeStepGranularity="@dimen/_1ssp"
+            app:autoSizeTextType="uniform" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_spc"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_1sdp"
+            android:maxLines="1"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="SPC"
+            android:textSize="@dimen/_6ssp"
+            app:autoSizeMaxTextSize="@dimen/_6ssp"
+            app:autoSizeMinTextSize="@dimen/_4ssp"
+            app:autoSizeStepGranularity="@dimen/_1ssp"
+            app:autoSizeTextType="uniform" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_f"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_1sdp"
+            android:maxLines="1"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="F"
+            android:textSize="@dimen/_6ssp"
+            app:autoSizeMaxTextSize="@dimen/_6ssp"
+            app:autoSizeMinTextSize="@dimen/_4ssp"
+            app:autoSizeStepGranularity="@dimen/_1ssp"
+            app:autoSizeTextType="uniform" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_h"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_1sdp"
+            android:maxLines="1"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="H"
+            android:textSize="@dimen/_6ssp"
+            app:autoSizeMaxTextSize="@dimen/_6ssp"
+            app:autoSizeMinTextSize="@dimen/_4ssp"
+            app:autoSizeStepGranularity="@dimen/_1ssp"
+            app:autoSizeTextType="uniform" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_2"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_1sdp"
+            android:maxLines="1"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="2"
+            android:textSize="@dimen/_6ssp"
+            app:autoSizeMaxTextSize="@dimen/_6ssp"
+            app:autoSizeMinTextSize="@dimen/_4ssp"
+            app:autoSizeStepGranularity="@dimen/_1ssp"
+            app:autoSizeTextType="uniform" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_y"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_1sdp"
+            android:maxLines="1"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="Y"
+            android:textSize="@dimen/_6ssp"
+            app:autoSizeMaxTextSize="@dimen/_6ssp"
+            app:autoSizeMinTextSize="@dimen/_4ssp"
+            app:autoSizeStepGranularity="@dimen/_1ssp"
+            app:autoSizeTextType="uniform" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_n"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_1sdp"
+            android:maxLines="1"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="N"
+            android:textSize="@dimen/_6ssp"
+            app:autoSizeMaxTextSize="@dimen/_6ssp"
+            app:autoSizeMinTextSize="@dimen/_4ssp"
+            app:autoSizeStepGranularity="@dimen/_1ssp"
+            app:autoSizeTextType="uniform" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_c"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_1sdp"
+            android:maxLines="1"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="C"
+            android:textSize="@dimen/_6ssp"
+            app:autoSizeMaxTextSize="@dimen/_6ssp"
+            app:autoSizeMinTextSize="@dimen/_4ssp"
+            app:autoSizeStepGranularity="@dimen/_1ssp"
+            app:autoSizeTextType="uniform" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_g"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_1sdp"
+            android:maxLines="1"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="G"
+            android:textSize="@dimen/_6ssp"
+            app:autoSizeMaxTextSize="@dimen/_6ssp"
+            app:autoSizeMinTextSize="@dimen/_4ssp"
+            app:autoSizeStepGranularity="@dimen/_1ssp"
+            app:autoSizeTextType="uniform" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

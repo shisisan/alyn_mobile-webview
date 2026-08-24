@@ -1,0 +1,39 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+        maven { url "https://maven.aliyun.com/repository/google" }
+        maven { url "https://maven.aliyun.com/repository/jcenter" }
+    }
+}
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+        maven { url "https://maven.aliyun.com/repository/google" }
+        maven { url "https://maven.aliyun.com/repository/jcenter" }
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:8.8.0"
+        classpath "com.google.gms:google-services:4.4.2"
+        classpath "com.google.firebase:firebase-crashlytics-gradle:3.0.3"
+        classpath "com.joom.paranoid:paranoid-gradle-plugin:0.3.14"
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://maven.aliyun.com/repository/google" }
+        maven { url "https://maven.aliyun.com/repository/jcenter" }
+    }
+}
+
+rootProject.name = "Alyn SA-MP Mobile"
+include(":app")

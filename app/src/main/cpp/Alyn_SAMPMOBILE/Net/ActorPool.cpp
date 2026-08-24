@@ -1,0 +1,61 @@
+#include "../Game/Game.h"
+#include "NetGame.h"
+#include "../UI/UI.h"
+
+extern UI* pUI;
+
+CActorPool::CActorPool()
+{
+	for (PLAYERID ActorID = 0; ActorID < MAX_ACTORS; ActorID++) {
+		m_pActors[ActorID] = nullptr;
+		m_bActorSlotState[ActorID] = false;
+		m_pGtaPed[ActorID] = nullptr;
+	}
+}
+
+CActorPool::~CActorPool()
+{
+	for (PLAYERID ActorID = 0; ActorID < MAX_ACTORS; ActorID++) {
+		Delete(ActorID);
+	}
+}
+
+void CActorPool::New(NEW_ACTOR* pNewActor)
+{
+	if (m_pActors[pNewActor->ActorID]) {
+		if (pUI) pUI->chat()->addDebugMessage("Warning: actor %u was not deleted", pNewActor->ActorID);
+		Delete(pNewActor->ActorID);
+	}
+
+	auto pActor = new CActor(pNewActor->iSkin,
+			pNewActor->vecPos.x,
+			pNewActor->vecPos.y,
+			pNewActor->vecPos.z,
+			pNewActor->fAngle);
+
+	m_pActors[pNewActor->ActorID] = pActor;
+
+	if (!pActor) return;
+
+	m_pGtaPed[pNewActor->ActorID] = pActor->m_actor;
+	m_bActorSlotState[pNewActor->ActorID] = true;
+	pActor->SetHealth(pNewActor->fHealth);
+
+	if (pNewActor->bInvulnerable) {
+		pActor->SetInvulnerable(true);
+	}
+	else {
+		pActor->SetInvulnerable(false);
+	}
+}
+
+void CActorPool::Delete(PLAYERID ActorID)
+{
+	CActor* pActor = GetAt(ActorID);
+	if (pActor) {
+		m_bActorSlotState[ActorID] = false;
+		delete m_pActors[ActorID];
+		m_pActors[ActorID] = nullptr;
+		m_pGtaPed[ActorID] = nullptr;
+	}
+}

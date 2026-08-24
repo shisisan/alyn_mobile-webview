@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<filepath>
+    <external-path
+        name="any_path"
+        path="." />
+    <files-path
+        name="internal_path"
+        path="." />
+    <external-file-path
+        name="logs"
+        path="logcat/" />
+    <external-files-path
+        name="any_files_ext"
+        path="." />
+</filepath>

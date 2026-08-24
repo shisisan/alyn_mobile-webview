@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/servers_nav"
+    app:startDestination="@id/favorite_servers_fragment">
+
+    <fragment
+        android:id="@+id/favorite_servers_fragment"
+        android:name="ro.alynsampmobile.launcher.ui.fragment.FavoriteServersFragment"
+        android:label="FavoriteServersFragment" />
+
+    <fragment
+        android:id="@+id/hosted_servers_fragment"
+        android:name="ro.alynsampmobile.launcher.ui.fragment.HostedServersFragment"
+        android:label="HostedServersFragment" />
+
+</navigation>

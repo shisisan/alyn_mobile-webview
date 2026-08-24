@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scoreboard_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/scoreboard_container"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="@dimen/_210sdp"
+        android:background="#AA000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/scoreboard_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/scoreboard_server"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:text="SA-MP Mobile"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_9sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/scoreboard_players"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_5sdp"
+                android:text="Players: 1000"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_9sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/scoreboard_columns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/scoreboard_header"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scoreboard_header">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_weight="1"
+                android:text="id"
+                android:textColor="#a9c4e4"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="name"
+                android:textColor="#a9c4e4"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="@dimen/_17sdp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="score"
+                android:textColor="#a9c4e4"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="ping"
+                android:textColor="#a9c4e4"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/scoreboard_players_list"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_155sdp"
+            android:layout_below="@+id/scoreboard_columns"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/samp_border"
+            android:fadeScrollbars="false"
+            android:padding="@dimen/_7sdp"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarSize="@dimen/_5sdp"
+            android:scrollbarThumbVertical="@drawable/scroll"
+            android:scrollbarTrackVertical="@null"
+            android:scrollbars="vertical"
+            android:verticalScrollbarPosition="right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scoreboard_columns" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
