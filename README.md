@@ -4,7 +4,7 @@ This project is based on the **Alyn SA-MP Mobile v17.x source** (March 2025), wi
 
 ## Preview
 
-📺 **YouTube Preview:** [Watch the demo](https://www.youtube.com/watch?v=Ggnl1qz4vKg)
+**Preview:** [Watch the demo](https://www.youtube.com/watch?v=Ggnl1qz4vKg)
 
 ## Requirements
 
