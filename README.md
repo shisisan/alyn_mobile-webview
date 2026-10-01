@@ -2,6 +2,10 @@
 
 This project is based on the **Alyn SA-MP Mobile v17.x source** (March 2025), with a focus on implementing WebView functionality into the existing SA-MP Mobile client.
 
+## Preview
+
+📺 **YouTube Preview:** [Watch the demo](https://www.youtube.com/watch?v=Ggnl1qz4vKg)
+
 ## Requirements
 
 * Android Studio
